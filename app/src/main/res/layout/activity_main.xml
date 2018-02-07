@@ -4,95 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mobapde.thesis.jeepneytracker.MainActivity">
+    tools:context="com.mobapde.thesis.jeepneytracker.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/stop_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
         android:background="@color/colorPrimary"
         android:text="Stop"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:textColor="#ffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/load_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:background="@color/colorPrimary"
         android:text="Load\nPassenger"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="151dp" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/unload_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/unload_btn" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/go_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="25dp"
         android:background="@color/colorPrimary"
         android:text="Go"
-        tools:layout_editor_absoluteX="279dp"
-        tools:layout_editor_absoluteY="25dp" />
+        android:textColor="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/unload_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="125dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="126dp"
         android:background="@color/colorPrimary"
         android:text="Unload\nPassenger"
-        tools:layout_editor_absoluteX="264dp"
-        tools:layout_editor_absoluteY="151dp" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/go_btn" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/wait_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
         android:background="@color/colorPrimary"
         android:text="Wait\nPasenger"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="231dp" />
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button6"
-        android:layout_width="70dp"
+        android:id="@+id/cll2_btn"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="16dp"
         android:background="@color/colorPrimary"
-        android:text="<<"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:text="2 left"
+        android:textColor="#ffffff"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cll1_btn"
+        app:layout_constraintEnd_toStartOf="@+id/cll1_btn"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/clr2_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         android:background="@color/colorPrimary"
-        android:text=">>"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:text="2 right"
+        android:textColor="#ffffff"
+        app:layout_constraintBaseline_toBaselineOf="@+id/clr1_btn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/cll1_btn"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="89dp"
+        android:layout_marginStart="88dp"
         android:background="@color/colorPrimary"
-        android:text="<"
-        tools:layout_editor_absoluteX="104dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:text="1 left"
+        android:textColor="#ffffff"
+        app:layout_constraintBaseline_toBaselineOf="@+id/clr1_btn"
+        app:layout_constraintEnd_toEndOf="@+id/clr1_btn"
+        app:layout_constraintStart_toStartOf="@+id/load_btn" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="31dp"
         android:text="Lane Change"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="378dp" />
+        app:layout_constraintBottom_toTopOf="@+id/cll1_btn"
+        app:layout_constraintEnd_toEndOf="@+id/clr1_btn" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/clr1_btn"
         android:layout_width="73dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:layout_marginEnd="17dp"
         android:background="@color/colorPrimary"
-        android:text=">"
-        tools:layout_editor_absoluteX="190dp"
-        tools:layout_editor_absoluteY="378dp" />
+        android:text="1 right"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/clr2_btn" />
 
 </android.support.constraint.ConstraintLayout>
