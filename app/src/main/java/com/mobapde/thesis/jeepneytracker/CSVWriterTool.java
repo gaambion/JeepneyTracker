@@ -25,9 +25,12 @@ public class CSVWriterTool {
         String outputFile = "output.csv";
         boolean alreadyExists = new File(outputFile).exists();
 
-        File file = new File(ctx.getFilesDir(),"output.csv");
-        if(!file.exists())
-            file.mkdir();
+        File file = new File(android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"output.csv");
+        if(!file.exists()){
+            System.out.println("File already exists");
+            file.getParentFile().mkdir();
+        }
+
         try{
             Date d = new Date();
 
@@ -38,7 +41,8 @@ public class CSVWriterTool {
             String [] entry = {event, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d)};
             writer.writeNext(entry);
             writer.close();
-            System.out.println(entry[0]+entry[1]);
+            System.out.println("Entry 0 " + entry[0]);
+            System.out.println("Entry 1 " + entry[1]);
         } catch (IOException e){
             System.out.println("Error save");
             e.printStackTrace();
