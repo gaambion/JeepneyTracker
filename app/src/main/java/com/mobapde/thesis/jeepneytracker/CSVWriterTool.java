@@ -27,7 +27,7 @@ public class CSVWriterTool {
 
         File file = new File(android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),"output.csv");
         if(!file.exists()){
-            System.out.println("File already exists");
+            System.out.println("File does not exist yet");
             file.getParentFile().mkdir();
         }
 
@@ -36,9 +36,9 @@ public class CSVWriterTool {
 
             String csv = android.os.Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+"/output.csv";
             System.out.println(csv);
-            CSVWriter writer = new CSVWriter(new FileWriter(file));
+            CSVWriter writer = new CSVWriter(new FileWriter(file, true));
 
-            String [] entry = {event, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d)};
+            String [] entry = {event, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(d),"/r/n"};
             writer.writeNext(entry);
             writer.close();
             System.out.println("Entry 0 " + entry[0]);

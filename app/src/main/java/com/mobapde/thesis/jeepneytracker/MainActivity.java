@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.opencsv.CSVWriter;
 
@@ -42,12 +43,16 @@ public class MainActivity extends AppCompatActivity {
         path  = getApplicationContext().getFilesDir().getPath();
         ctx = getApplicationContext();
 
+
+        final int duration = Toast.LENGTH_SHORT;
+
         unload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 System.out.println("Unload");
                 try{
                     writeCSV("Unload");
+                    Toast.makeText(ctx, "Unloading Passengers", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -60,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Stop");
                 try{
                     writeCSV("Stop");
+                    Toast.makeText(ctx, "Jeepney Stopping", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -72,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Go");
                 try{
                     writeCSV("Go");
+                    Toast.makeText(ctx, "Jeepnney is running", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -84,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Load");
                 try{
                     writeCSV("Load");
+                    Toast.makeText(ctx, "Loading Passengers", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -96,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Wait");
                 try{
                     writeCSV("Wait");
+                    Toast.makeText(ctx, "Waiting on Passengers", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -107,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try{
                     System.out.println("Change Lane Left Swerve");
-
+                    Toast.makeText(ctx, "Changed Lane Left Swerve", duration).show();
                     writeCSV("2LaneLeft");
                 } catch (IOException e) {
 
@@ -122,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println("Change Lane Left Normal");
                 try{
                     writeCSV("1LaneLeft");
+                    Toast.makeText(ctx, "Changed Lane Left Normal", duration).show();
                 } catch (IOException e) {
 
                 }
@@ -133,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try{
                     writeCSV("2LaneRight");
+                    Toast.makeText(ctx, "Changed Lane Right Swerve", duration).show();
                 } catch (IOException e) {
                 }
             }
@@ -141,9 +152,10 @@ public class MainActivity extends AppCompatActivity {
         clr1_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Change LAne Right Normal");
+                System.out.println("Change Lane Right Normal");
                 try{
                     writeCSV("1LaneRight");
+                    Toast.makeText(ctx, "Changed Lane Right Normal", duration).show();
                 } catch (IOException e) {
                 }
             }
